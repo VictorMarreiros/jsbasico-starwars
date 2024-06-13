@@ -10,15 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Handlee&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app"> 
 
-        <h1>{{ title }}</h1>
-        <small>Olá, {{ userName }}</small>
+        <div class="top">
+            <div>
+                <h1>{{ title }}</h1>
+                <small>Olá, {{ userName }}</small>
+            </div>
+    
+            <form>
+                <input placeholder="Busca por nome..." v-model="searchName"/>
+                <button type="button" @click="search()">Buscar</button>
+            </form>
+        </div>
 
-        <form>
-            <input placeholder="Busca por nome..." v-model="searchName"/>
-            <button type="button" @click="search()">Buscar</button>
-        </form>
 
         <div class="characters">
             <div class="item" v-for="item of characters">
